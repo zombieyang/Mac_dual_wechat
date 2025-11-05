@@ -35,18 +35,24 @@
 
 防止微信检测为同一应用：（直接复制下面两行的内容，不要分别复制）
 
-`sudo /usr/libexec/PlistBuddy -c "Set :CFBundleIdentifier com.tencent.xinWeChat2" /Applications/WeChat2.app/Contents/Info.plist`
+```
+sudo /usr/libexec/PlistBuddy -c "Set :CFBundleIdentifier com.tencent.xinWeChat2" /Applications/WeChat2.app/Contents/Info.plist
+```
 ​
 
 #### 3）重新签名应用​，在终端执行（需输入密码）：
 
-`sudo codesign --force --deep --sign - /Applications/WeChat2.app`
+```
+sudo codesign --force --deep --sign - /Applications/WeChat2.app
+```
 
 #### 4）​启动双开​
 
 手动打开第一个微信（原应用），在终端执行，启动第二个：
 
-`nohup /Applications/WeChat2.app/Contents/MacOS/WeChat >/dev/null 2>&1 & `
+```
+nohup /Applications/WeChat2.app/Contents/MacOS/WeChat >/dev/null 2>&1 &
+```
 
 #### 5）常驻程序坞
 
